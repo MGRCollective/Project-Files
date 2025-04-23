@@ -98,10 +98,11 @@ h1 {
 }
 
 footer {
-  background-color: #000;
+  background-color: #f4e8d4;
   text-align: center;
   padding: 30px 20px;
   font-size: 0.9rem;
+  color: #222;
 }
 
 footer a {
