@@ -11,7 +11,6 @@ body {
   color: #222;
 }
 
-
 .logo-container {
   display: flex;
   justify-content: center;
@@ -77,6 +76,12 @@ h1 {
   animation: fadeIn 1s ease forwards;
 }
 
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+}
+
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -93,11 +98,10 @@ h1 {
 }
 
 footer {
-  background-color: #111;
-  text-align: center;
-  padding: 30px 10px;
+  background-color: #000;
+  text-align: left;
+  padding: 30px 20px;
   font-size: 0.9rem;
-  color: #ccc;
 }
 
 footer a {
@@ -108,3 +112,6 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+/* Font import suggestion to place in <head> of your HTML file */
+/* <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet"> */
