@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #111;
+  font-family: 'Inter', sans-serif;
+  background-color: #0A0A0A;
   color: #fff;
   line-height: 1.6;
 }
@@ -24,6 +24,11 @@ body {
   height: auto;
 }
 
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #D4AF37;
+  font-weight: 700;
+}
 
 h1 {
   font-size: 2.5rem;
@@ -34,10 +39,16 @@ h1 {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
-  background: #e63946;
-  color: white;
+  background: #D4AF37;
+  color: #0A0A0A;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #F5E1A4;
 }
 
 .collections, .trending {
@@ -69,13 +80,18 @@ h1 {
 }
 
 footer {
-  background-color: #000;
+  background-color: #111;
   text-align: center;
   padding: 30px 10px;
   font-size: 0.9rem;
+  color: #ccc;
 }
 
 footer a {
-  color: #aaa;
+  color: #9EC9E2;
   text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
