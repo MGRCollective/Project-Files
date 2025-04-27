@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MGR Collective</title>
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="logo-container">
-  <img src="MGR_Collective_Logo_Final.png" alt="MGR Collective Logo" style="max-width: 300px; display: block; margin: 0 auto;">
-</div>
-    <h1>Curated Goods. Timeless Taste.</h1>
-    <p>Discover handpicked finds from Pinterest in home, lifestyle, and style.</p>
-    <a href="https://www.pinterest.com/mgrcollective/" target="_blank" class="button">Explore Pinterest Boards</a>
-  </header>
 
-  <main>
-    <section class="collections">
-      <h2>Featured Collections</h2>
-      <div class="grid">
-        <a href="https://www.pinterest.com/mgrcollective/home-finds/" target="_blank" class="card">
-          <img src="home.jpg" alt="Home Finds" />
-          <h3>Home Finds</h3>
-        </a>
-        <a href="https://www.pinterest.com/mgrcollective/style-picks/" target="_blank" class="card">
-          <img src="style.jpg" alt="Style Picks" />
-          <h3>Style Picks</h3>
-        </a>
-        <a href="https://www.pinterest.com/mgrcollective/lifestyle-essentials/" target="_blank" class="card">
-          <img src="lifestyle.jpg" alt="Lifestyle Essentials" />
-          <h3>Lifestyle Essentials</h3>
-        </a>
-      </div>
-    </section>
+  <!-- Popup for Email Subscription -->
+  <div id="email-popup" class="popup">
+    <div class="popup-content">
+      <h2>Don't Miss Out!</h2>
+      <p>Subscribe to get updates and promotions.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <div class="checkbox-container">
+          <input type="checkbox" id="promo-checkbox" required>
+          <label for="promo-checkbox">I agree to receive promotional emails.</label>
+        </div>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
 
-    <section class="trending">
-      <h2>Trending Now</h2>
-      <p>Check out what's popular on our Pinterest this week!</p>
-      <a href="https://www.pinterest.com/mgrcollective/trending-now/" target="_blank" class="button">See What's Hot</a>
-    </section>
-  </main>
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="MGR_Collective_Logo.png" alt="MGR Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Housewares</a></li>
+      <li><a href="#">Clothing</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
 
+  <!-- Trending Now Section -->
+  <section class="trending">
+    <h2>Trending Now</h2>
+    <div class="slider">
+      <a href="https://www.pinterest.com" target="_blank"><img src="slide1.jpg" alt="Trending Item 1"></a>
+      <a href="https://www.pinterest.com" target="_blank"><img src="slide2.jpg" alt="Trending Item 2"></a>
+      <a href="https://www.pinterest.com" target="_blank"><img src="slide3.jpg" alt="Trending Item 3"></a>
+    </div>
+  </section>
+
+  <!-- Featured Collections Section -->
+  <section class="featured">
+    <h2>Featured Collections</h2>
+    <div class="collections">
+      <a href="https://www.pinterest.com" target="_blank"><img src="feature1.jpg" alt="Collection 1"></a>
+      <a href="https://www.pinterest.com" target="_blank"><img src="feature2.jpg" alt="Collection 2"></a>
+      <a href="https://www.pinterest.com" target="_blank"><img src="feature3.jpg" alt="Collection 3"></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-  <p>Contact: <a href="mailto:mgr@mgrcollective.com">mgr@mgrcollective.com</a></p>
-  <p>
-    <a href="disclosure.html">Affiliate Disclosure</a> | 
-    <a href="privacy_policy.html">Privacy Policy</a>
-  </p>
-  <p>&copy; 2025 MGR Collective</p>
-</footer>
+    <p>Contact: <a href="mailto:mgr@mgrcollective.com">mgr@mgrcollective.com</a></p>
+    <p><a href="disclosure.html">Affiliate Disclosure</a> | <a href="privacy_policy.html">Privacy Policy</a></p>
+    <p>&copy; 2025 MGR Collective</p>
+  </footer>
+
+  <script>
+    // Popup script
+    window.onload = function() {
+      document.getElementById('email-popup').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
