@@ -10,14 +10,14 @@
 
 <nav class="navbar">
   <div class="logo">
-    <a href="index.html"><img src="images/your-logo.png" alt="MGR Logo"></a>
+    <a href="index.html"><img src="images/MGR_Collective_Logo.png" alt="MGR Logo"></a>
   </div>
   <ul class="nav-links">
     <li><a href="housewares.html">Housewares</a></li>
     <li><a href="clothing.html">Clothing</a></li>
     <li>
       <div class="search-container">
-        <img src="images/search-icon.svg" id="search-icon" alt="Search" />
+        <img src="images/search-icon.png" id="search-icon" alt="Search" />
         <input type="text" id="search-bar" placeholder="Search...">
       </div>
     </li>
@@ -33,16 +33,38 @@
 </section>
 
 <script>
-  // Search popup logic
-  document.getElementById('search-icon').onclick = function() {
-    var searchBar = document.getElementById('search-bar');
-    if (searchBar.style.display === "block") {
-      searchBar.style.display = "none";
-    } else {
-      searchBar.style.display = "block";
-      searchBar.focus();
+  // Open/Close Search Bar
+document.getElementById('search-icon').onclick = function() {
+  var searchBar = document.getElementById('search-bar');
+  if (searchBar.style.display === "block") {
+    searchBar.style.display = "none";
+  } else {
+    searchBar.style.display = "block";
+    searchBar.focus();
+  }
+};
+
+// Real Search Logic
+document.getElementById('search-bar').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    let query = this.value.toLowerCase();
+    let allLinks = document.querySelectorAll('.collection-gallery a');
+    let found = false;
+
+    allLinks.forEach(link => {
+      let imgAlt = link.querySelector('img').alt.toLowerCase();
+      if (imgAlt.includes(query)) {
+        link.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        found = true;
+      }
+    });
+
+    if (!found) {
+      alert("Sorry, no matching products found.");
     }
-  };
+  }
+});
 </script>
 
 </body>
