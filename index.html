@@ -29,16 +29,21 @@
 
   <!-- Top Navigation Bar -->
   <nav class="navbar">
-    <div class="logo">
-      <img src="your-logo.png" alt="MGR Logo">
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Housewares</a></li>
-      <li><a href="#">Clothing</a></li>
-      <li><a href="#">Search</a></li>
-      <li><a href="support.html">Support</a></li>
-    </ul>
-  </nav>
+  <div class="logo">
+    <img src="your-logo.png" alt="MGR Logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="housewares.html">Housewares</a></li>
+    <li><a href="clothing.html">Clothing</a></li>
+    <li>
+      <div class="search-container">
+        <img src="search-icon.svg" id="search-icon" alt="Search" />
+        <input type="text" id="search-bar" placeholder="Search...">
+      </div>
+    </li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+</nav>
 
   <!-- Trending Now Section -->
   <section class="trending">
@@ -47,17 +52,17 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <a href="https://www.pinterest.com" target="_blank">
-            <img src="slide1.jpg" alt="Trending Item 1">
+            <img src="images/slide1.jpg" alt="Trending Item 1">
           </a>
         </div>
         <div class="swiper-slide">
           <a href="https://www.pinterest.com" target="_blank">
-            <img src="slide2.jpg" alt="Trending Item 2">
+            <img src="images/slide2.jpg" alt="Trending Item 2">
           </a>
         </div>
         <div class="swiper-slide">
           <a href="https://www.pinterest.com" target="_blank">
-            <img src="slide3.jpg" alt="Trending Item 3">
+            <img src="images/slide3.jpg" alt="Trending Item 3">
           </a>
         </div>
       </div>
@@ -69,9 +74,9 @@
   <section class="featured">
     <h2>Featured Collections</h2>
     <div class="collections">
-      <a href="https://www.pinterest.com" target="_blank"><img src="feature1.jpg" alt="Collection 1"></a>
-      <a href="https://www.pinterest.com" target="_blank"><img src="feature2.jpg" alt="Collection 2"></a>
-      <a href="https://www.pinterest.com" target="_blank"><img src="feature3.jpg" alt="Collection 3"></a>
+      <a href="https://www.pinterest.com" target="_blank"><img src="images/feature1.jpg" alt="Collection 1"></a>
+      <a href="https://www.pinterest.com" target="_blank"><img src="images/feature2.jpg" alt="Collection 2"></a>
+      <a href="https://www.pinterest.com" target="_blank"><img src="images/feature3.jpg" alt="Collection 3"></a>
     </div>
   </section>
 
@@ -95,6 +100,17 @@
     document.getElementById('close-popup').onclick = function() {
       document.getElementById('email-popup').style.display = 'none';
     }
+
+    // Search popup logic
+document.getElementById('search-icon').onclick = function() {
+  var searchBar = document.getElementById('search-bar');
+  if (searchBar.style.display === "block") {
+    searchBar.style.display = "none";
+  } else {
+    searchBar.style.display = "block";
+    searchBar.focus();
+  }
+};
 
     // Swiper initialization
     var swiper = new Swiper(".mySwiper", {

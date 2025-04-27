@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clothing | MGR Collective</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html"><img src="images/your-logo.png" alt="MGR Logo"></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="housewares.html">Housewares</a></li>
+    <li><a href="clothing.html">Clothing</a></li>
+    <li>
+      <div class="search-container">
+        <img src="images/search-icon.svg" id="search-icon" alt="Search" />
+        <input type="text" id="search-bar" placeholder="Search...">
+      </div>
+    </li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+</nav>
+
+<section class="collection-gallery">
+  <a href="https://www.pinterest.com" target="_blank"><img src="images/clothing1.jpg" alt="Clothing Item 1"></a>
+  <a href="https://www.pinterest.com" target="_blank"><img src="images/clothing2.jpg" alt="Clothing Item 2"></a>
+  <a href="https://www.pinterest.com" target="_blank"><img src="images/clothing3.jpg" alt="Clothing Item 3"></a>
+  <!-- Add more clothing items here -->
+</section>
+
+<script>
+  // Search popup logic
+  document.getElementById('search-icon').onclick = function() {
+    var searchBar = document.getElementById('search-bar');
+    if (searchBar.style.display === "block") {
+      searchBar.style.display = "none";
+    } else {
+      searchBar.style.display = "block";
+      searchBar.focus();
+    }
+  };
+</script>
+
+</body>
+</html>
