@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MGR Collective</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,6 +13,7 @@
   <!-- Popup for Email Subscription -->
   <div id="email-popup" class="popup">
     <div class="popup-content">
+      <span id="close-popup">&times;</span> <!-- X to close -->
       <h2>Don't Miss Out!</h2>
       <p>Subscribe to get updates and promotions.</p>
       <form>
@@ -28,7 +30,7 @@
   <!-- Top Navigation Bar -->
   <nav class="navbar">
     <div class="logo">
-      <img src="MGR_Collective_Logo.png" alt="MGR Logo">
+      <img src="your-logo.png" alt="MGR Logo">
     </div>
     <ul class="nav-links">
       <li><a href="#">Housewares</a></li>
@@ -41,10 +43,24 @@
   <!-- Trending Now Section -->
   <section class="trending">
     <h2>Trending Now</h2>
-    <div class="slider">
-      <a href="https://www.pinterest.com" target="_blank"><img src="slide1.jpg" alt="Trending Item 1"></a>
-      <a href="https://www.pinterest.com" target="_blank"><img src="slide2.jpg" alt="Trending Item 2"></a>
-      <a href="https://www.pinterest.com" target="_blank"><img src="slide3.jpg" alt="Trending Item 3"></a>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="https://www.pinterest.com" target="_blank">
+            <img src="slide1.jpg" alt="Trending Item 1">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.pinterest.com" target="_blank">
+            <img src="slide2.jpg" alt="Trending Item 2">
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="https://www.pinterest.com" target="_blank">
+            <img src="slide3.jpg" alt="Trending Item 3">
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -65,11 +81,30 @@
     <p>&copy; 2025 MGR Collective</p>
   </footer>
 
+  <!-- JavaScript for popup and slider -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     // Popup script
     window.onload = function() {
       document.getElementById('email-popup').style.display = 'block';
     }
+    document.getElementById('close-popup').onclick = function() {
+      document.getElementById('email-popup').style.display = 'none';
+    }
+
+    // Swiper initialization
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1,
+      spaceBetween: 0,
+      grabCursor: true,
+      centeredSlides: true,
+    });
   </script>
+
 </body>
 </html>
