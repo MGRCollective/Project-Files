@@ -13,7 +13,7 @@
   <!-- Popup for Email Subscription -->
   <div id="email-popup" class="popup">
     <div class="popup-content">
-      <span id="close-popup">&times;</span> <!-- X to close -->
+      <div id="close-popup">&times;</div>
       <h2>Don't Miss Out!</h2>
       <p>Subscribe to get updates and promotions.</p>
       <form>
@@ -61,6 +61,7 @@
           </a>
         </div>
       </div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
 
@@ -86,7 +87,10 @@
   <script>
     // Popup script
     window.onload = function() {
-      document.getElementById('email-popup').style.display = 'block';
+      if (!sessionStorage.getItem('popupShown')) {
+        document.getElementById('email-popup').style.display = 'block';
+        sessionStorage.setItem('popupShown', 'true');
+      }
     }
     document.getElementById('close-popup').onclick = function() {
       document.getElementById('email-popup').style.display = 'none';
@@ -103,6 +107,10 @@
       spaceBetween: 0,
       grabCursor: true,
       centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
     });
   </script>
 
